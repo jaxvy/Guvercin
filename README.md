@@ -8,7 +8,7 @@ In your Activity or Fragment you can setup LocalBroadcastManager callbacks using
 ```
 @Guvercin("Broadcast_Tag")
 public void myCallback(){
-  // Code the execute when "Broadcast_Tag" is broadcast
+  // Run the code to execute when "Broadcast_Tag" is broadcast
 }
 ```
 
