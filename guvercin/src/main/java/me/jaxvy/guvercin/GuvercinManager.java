@@ -24,6 +24,7 @@ public class GuvercinManager {
     private static GuvercinBinder getBinder(Object target) {
         Class<?> targetClass = target.getClass();
         Constructor<? extends GuvercinBinder> constructor = BINDINGS.get(targetClass);
+        boolean isClassGuvercinAnnotated = true;
         if (constructor == null) {
             String binderKey = targetClass.getCanonicalName() + BINDER_SUFFIX;
             try {
@@ -31,21 +32,23 @@ public class GuvercinManager {
                 constructor = (Constructor<? extends GuvercinBinder>) guvercinBinderClass.getConstructor();
                 BINDINGS.put(targetClass, constructor);
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                isClassGuvercinAnnotated = false;
             } catch (NoSuchMethodException e) {
-                e.printStackTrace();
+                isClassGuvercinAnnotated = false;
             }
         }
 
         GuvercinBinder guvercinBinder = NOP_GUVERCIN_BINDER;
-        try {
-            guvercinBinder = constructor.newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
+        if (isClassGuvercinAnnotated) {
+            try {
+                guvercinBinder = constructor.newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
         }
 
         return guvercinBinder;

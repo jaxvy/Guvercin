@@ -45,4 +45,13 @@
         android:gravity="center"
         android:padding="16dp"
         android:text="Open Fragment" />
+
+    <Button
+        android:id="@+id/MainActivity_button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Open Secondary Activity" />
 </LinearLayout>

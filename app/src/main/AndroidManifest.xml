@@ -18,7 +18,7 @@
         </activity>
 
         <activity
-            android:name=".ui.MainFragment"
+            android:name=".ui.SecondaryActivity"
             android:label="@string/app_name"></activity>
     </application>
 </manifest>

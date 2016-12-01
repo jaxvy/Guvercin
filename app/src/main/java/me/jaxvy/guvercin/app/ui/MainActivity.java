@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -60,7 +61,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 /**
-                 * The event will be received on BaseActitivy
+                 * The event will be received on BaseActivity
                  */
                 LocalBroadcastManager.getInstance(MainActivity.this)
                         .sendBroadcast(new Intent(BUTTON_3_TAG));
@@ -75,6 +76,14 @@ public class MainActivity extends BaseActivity {
                 ft.add(android.R.id.content, MainFragment.newInstance());
                 ft.addToBackStack(MainFragment.TAG);
                 ft.commitAllowingStateLoss();
+            }
+        });
+
+        Button button5 = (Button) findViewById(R.id.MainActivity_button5);
+        button5.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SecondaryActivity.class));
             }
         });
 
