@@ -54,9 +54,9 @@ Please see the sample project (app module) to see how it's used in a project.
 ## Download
 
 ```
-compile 'me.jaxvy.guvercin:guvercin:1.0.0'
-compile 'me.jaxvy.guvercin:guvercin-annotations:1.0.0'
-apt 'me.jaxvy.guvercin:guvercin-compiler:1.0.0'
+compile 'me.jaxvy.guvercin:guvercin:1.0.1’
+compile 'me.jaxvy.guvercin:guvercin-annotations:1.0.1’
+apt 'me.jaxvy.guvercin:guvercin-compiler:1.0.1’
 ```
 
 ## License

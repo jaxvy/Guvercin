@@ -25,9 +25,9 @@ dependencies {
 
 dependencies {
 
-    //compile 'me.jaxvy.guvercin:guvercin:1.0.0'
-    //compile 'me.jaxvy.guvercin:guvercin-annotations:1.0.0'
-    //apt 'me.jaxvy.guvercin:guvercin-compiler:1.0.0'
+    // compile 'me.jaxvy.guvercin:guvercin:1.0.1'
+    // compile 'me.jaxvy.guvercin:guvercin-annotations:1.0.1'
+    // apt 'me.jaxvy.guvercin:guvercin-compiler:1.0.1'
 
     compile project(':guvercin')
     compile project(':guvercin-annotations')
